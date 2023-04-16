@@ -1,0 +1,33 @@
+
+@hostname = http://localhost:7071/api
+@story_id = 16707295568 
+
+### Create Story
+POST {{hostname}}/story HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Travel to Bangkok",
+    "story": "I once travelled to Bangkok during a long trip in December. The weather is hot, but the sky is clear blue sky."
+}
+
+### List Stories
+GET {{hostname}}/story HTTP/1.1
+content-type: application/json
+
+### Get Story with id
+GET {{hostname}}/story/{{story_id}} HTTP/1.1
+content-type: application/json
+
+### Update Story with id
+PATCH {{hostname}}/story/{{story_id}} HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Travel to Bangkok in December",
+    "story": "I travelled to Bangkok during a long trip in December. The weather is hot, but the sky is clear blue sky."
+}
+
+### Delete Story with id
+DELETE {{hostname}}/story/{{story_id}} HTTP/1.1
+content-type: application/json
